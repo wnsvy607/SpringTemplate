@@ -11,7 +11,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
-                .allowedOrigins("http://localhost:8082")
+                .allowedOrigins("*")
                 .allowedMethods(
                         HttpMethod.GET.name(),
                         HttpMethod.POST.name(),
@@ -19,6 +19,10 @@ public class WebConfig implements WebMvcConfigurer {
                         HttpMethod.PATCH.name(),
                         HttpMethod.DELETE.name(),
                         HttpMethod.OPTIONS.name()
-                );
+                )
+                //maxAge -> preflight 주기를 조절한다.
+                //preflight -> cors 권한을 체크하는 주기(매번 요청하면 비용이 많이 들기 때문이다.)
+                .maxAge(3600);
+
     }
 }
