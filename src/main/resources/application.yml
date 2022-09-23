@@ -13,7 +13,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: create  # 직접 ddl 문을 써주는게 좋긴하다.
     show-sql: true # 콘솔창에 sql 출력
     properties:
       hibernate:
@@ -40,4 +40,18 @@ feign:
         connect-timeout: 5000
         read-timeout: 5000
 
+
+kakao:
+  client:
+    id: ENC(LCbIEwayURg6qQ+WFjk1qw+ZYJNYy+sgSp7Q8A2nwCOyd6rqxACeQwfzKnt9SGnv)
+    secret: ENC(kPhA/tVaOHOFdf5WfORzQUMn5GNT20PMb0ALVcTOz/CPNddJPpM0PfLN+0RV1/XK)
+
+token:
+  secret: ENC(W9j3yOdJZBudW8SLX/esPX5cIqMYFe4jj2WQ+EV/GwIhUf9cxUh7kQ==) # 임의의 문자열
+  access-token-expiration-time: 900000  # 15분 1000(ms) x 60(s) x 15(m)
+  refresh-token-expiration-time: 1209600000 # 2주 1000(ms) x 60 (s) x 60(m) x 24(h) x 14(d)
+
+
+jasypt:
+  password: ${PASSWORD}
 
