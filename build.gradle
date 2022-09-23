@@ -36,6 +36,8 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 	//Jasypt
 	implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.4'
+	//swagger
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
 }
 
 dependencyManagement {
