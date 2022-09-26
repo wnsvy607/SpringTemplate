@@ -25,6 +25,8 @@ public class KakaoTokenController {
         return "loginForm";
     }
 
+
+    //callback url로 인가 코드를 받고 리다이렉트되는데, 바로 accessToken을 발급 받도록 요청한다.
     @GetMapping("/oauth/kakao/callback")
     public @ResponseBody String loginCallback(String code) {    //code는 인가코드
         String contentType = "application/x-www-form-urlencoded;charset=utf-8";
